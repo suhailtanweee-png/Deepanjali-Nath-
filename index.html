@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#5b2138">
+
+<meta name="description"
+      content="A heartfelt Teacher's Day tribute to Deepanjali Nath Miss, our beloved Zoology mentor at AHNSSS Badarpur.">
+
+<title>For Deepanjali Nath Miss ❤️</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#4b2032;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            #ffdce9 0,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            #f4d9eb 0,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff9fb,
+            #fff0f5,
+            #fffafd
+        );
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.20;
+
+    background-image:
+        radial-gradient(
+            #b85c7b 1px,
+            transparent 1px
+        );
+
+    background-size:28px 28px;
+
+    z-index:-1;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page{
+
+    display:none;
+
+    width:100%;
+
+    max-width:520px;
+
+    min-height:100vh;
+
+    margin:0 auto;
+
+    padding:
+        24px
+        18px
+        50px;
+}
+
+.page.active{
+    display:block;
+}
+
+#hero.active{
+    display:flex;
+}
+
+
+/* =========================================================
+   HERO PAGE
+========================================================= */
+
+#hero{
+
+    min-height:100vh;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px 22px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 10%,
+            #ffd9e6 0,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #fff5f8,
+            #fffafd
+        );
+}
+
+
+/* floating flower */
+
+.hero-flower{
+
+    font-size:48px;
+
+    margin-bottom:15px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+@keyframes floating{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+}
+
+
+/* small heading */
+
+.overline{
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:4px;
+
+    opacity:.55;
+
+    line-height:1.6;
+}
+
+
+/* main title */
+
+.hero-title{
+
+    margin-top:18px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:42px;
+
+    line-height:1.04;
+}
+
+.hero-title span{
+    color:#c45b7b;
+}
+
+
+/* hero description */
+
+.hero-description{
+
+    max-width:420px;
+
+    margin-top:18px;
+
+    font-size:14px;
+
+    line-height:1.75;
+
+    opacity:.72;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+
+    display:inline-block;
+
+    border:0;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:
+        15px
+        25px;
+
+    margin-top:22px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4a1c2e,
+            #823653
+        );
+
+    color:white;
+
+    font-weight:800;
+
+    font-size:11px;
+
+    letter-spacing:.5px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(74,28,46,.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 16px 35px
+        rgba(74,28,46,.32);
+}
+
+
+.btn:active{
+
+    transform:scale(.96);
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.top-card{
+
+    padding:25px 18px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #421625,
+            #6c2947,
+            #984665
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(74,28,46,.22);
+}
+
+
+.top-card-small{
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    opacity:.7;
+}
+
+
+.top-card h2{
+
+    margin-top:9px;
+
+    font-family:Georgia,serif;
+
+    font-size:30px;
+
+    line-height:1.2;
+}
+
+
+.top-card p{
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    opacity:.82;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-title{
+
+    text-align:center;
+
+    margin:
+        30px
+        0
+        20px;
+}
+
+
+.section-title h2{
+
+    font-family:Georgia,serif;
+
+    font-size:29px;
+
+    line-height:1.2;
+}
+
+
+.section-title p{
+
+    margin-top:9px;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    opacity:.65;
+}
+
+
+/* =========================================================
+   FEATURE GRID
+========================================================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:13px;
+}
+
+
+.card{
+
+    padding:20px 12px;
+
+    border-radius:21px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.92);
+
+    border:
+        1px solid #f0d1dc;
+
+    box-shadow:
+        0 8px 25px
+        rgba(74,28,46,.08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(74,28,46,.13);
+}
+
+
+.card-emoji{
+
+    display:block;
+
+    font-size:30px;
+
+    margin-bottom:9px;
+}
+
+
+.card b{
+
+    font-size:14px;
+}
+
+
+.card small{
+
+    display:block;
+
+    margin-top:7px;
+
+    font-size:10px;
+
+    line-height:1.5;
+
+    opacity:.6;
+}
+
+
+/* =========================================================
+   STORY BOX
+========================================================= */
+
+.story-box{
+
+    padding:23px;
+
+    margin-top:15px;
+
+    border-radius:24px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid #efd3dd;
+
+    border-left:
+        5px solid #c65b7c;
+
+    box-shadow:
+        0 9px 25px
+        rgba(74,28,46,.07);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+.story-box strong{
+    color:#963b5a;
+}
+
+
+/* =========================================================
+   MEMORIES WITHOUT IMAGES
+========================================================= */
+
+.memory-card{
+
+    position:relative;
+
+    margin:18px 0;
+
+    padding:28px 20px;
+
+    min-height:190px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    border-radius:27px;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff0f5
+        );
+
+    border:
+        1px solid #efd1dc;
+
+    box-shadow:
+        0 12px 30px
+        rgba(74,28,46,.09);
+}
+
+
+.memory-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+
+    height:130px;
+
+    right:-45px;
+
+    top:-45px;
+
+    border-radius:50%;
+
+    background:#f3bfd0;
+
+    opacity:.35;
+}
+
+
+.memory-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+
+    height:100px;
+
+    left:-45px;
+
+    bottom:-45px;
+
+    border-radius:50%;
+
+    background:#e8c7e0;
+
+    opacity:.3;
+}
+
+
+.memory-icon{
+
+    position:relative;
+
+    z-index:1;
+
+    font-size:42px;
+
+    margin-bottom:12px;
+}
+
+
+.memory-card h3{
+
+    position:relative;
+
+    z-index:1;
+
+    font-family:Georgia,serif;
+
+    font-size:21px;
+}
+
+
+.memory-card p{
+
+    position:relative;
+
+    z-index:1;
+
+    margin-top:9px;
+
+    font-size:13px;
+
+    line-height:1.65;
+
+    opacity:.7;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:30px 0;
+
+    opacity:.55;
+}
+
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    height:1px;
+
+    flex:1;
+
+    background:#d69aaa;
+}
+
+
+.divider span{
+    font-size:17px;
+}
+
+
+/* =========================================================
+   FIVE BIG LESSONS
+========================================================= */
+
+.lesson{
+
+    position:relative;
+
+    margin:23px 0;
+
+    padding:26px 21px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(255,240,246,.96)
+        );
+
+    border:
+        1px solid #efd1dc;
+
+    box-shadow:
+        0 14px 35px
+        rgba(74,28,46,.10);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.lesson:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(74,28,46,.15);
+}
+
+
+.lesson::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    right:-45px;
+
+    top:-45px;
+
+    border-radius:50%;
+
+    background:#f3bccc;
+
+    opacity:.28;
+}
+
+
+.lesson-number{
+
+    position:relative;
+
+    z-index:1;
+
+    font-family:Georgia,serif;
+
+    font-size:47px;
+
+    font-weight:bold;
+
+    line-height:1;
+
+    color:#e3a2b5;
+}
+
+
+.lesson-title{
+
+    position:relative;
+
+    z-index:1;
+
+    margin-top:10px;
+
+    font-family:Georgia,serif;
+
+    font-size:21px;
+
+    line-height:1.3;
+
+    color:#4a1c2e;
+}
+
+
+.lesson-text{
+
+    position:relative;
+
+    z-index:1;
+
+    margin-top:15px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#613447;
+}
+
+
+.lesson-quote{
+
+    position:relative;
+
+    z-index:1;
+
+    margin-top:18px;
+
+    padding-top:14px;
+
+    border-top:
+        1px solid #efd4de;
+
+    font-family:Georgia,serif;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    line-height:1.6;
+
+    color:#9a3e5e;
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.final-message{
+
+    text-align:center;
+
+    padding:
+        25px
+        10px;
+}
+
+
+.final-message .big-heart{
+
+    font-size:42px;
+
+    display:block;
+
+    margin-bottom:12px;
+}
+
+
+.final-message h2{
+
+    font-family:Georgia,serif;
+
+    font-size:27px;
+}
+
+
+.final-message p{
+
+    margin-top:12px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    opacity:.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    position:relative;
+
+    margin-top:35px;
+
+    padding:
+        36px
+        20px
+        25px;
+
+    border-radius:
+        30px
+        30px
+        10px
+        10px;
+
+    color:white;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #401522,
+            #64233e,
+            #8d3d5e
+        );
+
+    box-shadow:
+        0 -8px 30px
+        rgba(74,28,46,.18);
+
+    overflow:hidden;
+}
+
+
+/* footer decoration */
+
+.footer-decoration{
+
+    font-size:21px;
+
+    letter-spacing:7px;
+
+    margin-bottom:18px;
+}
+
+
+.footer h2{
+
+    font-family:Georgia,serif;
+
+    font-size:27px;
+
+    line-height:1.3;
+}
+
+
+.footer-main{
+
+    margin-top:12px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    opacity:.85;
+}
+
+
+/* =========================================================
+   CREATOR BOX
+========================================================= */
+
+.creator{
+
+    margin-top:23px;
+
+    padding:20px 14px;
+
+    border-radius:19px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+}
+
+
+.creator-label{
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    opacity:.65;
+}
+
+
+.creator-name{
+
+    display:block;
+
+    margin-top:7px;
+
+    font-family:Georgia,serif;
+
+    font-size:21px;
+}
+
+
+.creator-info{
+
+    margin-top:7px;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+    opacity:.75;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+   EXTRA CARE TAKEN TO MAKE THIS WORK
+========================================================= */
+
+.bottom-nav{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:9px;
+
+    margin-top:24px;
+}
+
+
+.bottom-nav button{
+
+    border:
+        1px solid
+        rgba(255,255,255,.30);
+
+    background:
+        rgba(255,255,255,.11);
+
+    color:white;
+
+    padding:
+        11px
+        14px;
+
+    border-radius:999px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+
+.bottom-nav button:hover{
+
+    background:white;
+
+    color:#4a1c2e;
+
+    transform:translateY(-2px);
+}
+
+
+.bottom-nav button:active{
+
+    transform:scale(.95);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button{
+
+    background:white;
+
+    color:#4a1c2e;
+
+    margin-top:20px;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.copyright{
+
+    margin-top:20px;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    opacity:.42;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:380px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-title{
+        font-size:36px;
+    }
+
+    .lesson-title{
+        font-size:19px;
+    }
+
+    .top-card h2{
+        font-size:26px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media(min-width:700px){
+
+    .page{
+        max-width:620px;
+    }
+
+    #hero{
+        max-width:none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =======================================================
+     PAGE 1 — HERO
+======================================================= -->
+
+<section
+    id="hero"
+    class="page active"
+>
+
+    <div class="hero-flower">
+        🌸
+    </div>
+
+
+    <p class="overline">
+        AHNSSS BADARPUR • CLASS XII SCIENCE • HOSTELLERS
+    </p>
+
+
+    <h1 class="hero-title">
+
+        A Tribute To<br>
+
+        The One Who<br>
+
+        Felt Like
+        <span>MOM</span>
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        For the woman who taught us Zoology,
+        guided our questions,
+        shared her wisdom,
+        and made hostel life feel a little more like home. ❤️
+
+    </p>
+
+
+    <button
+        type="button"
+        class="btn"
+        onclick="showPage('page2')"
+    >
+
+        ✨ UNVEIL HER STORY →
+
+    </button>
+
+
+    <p
+        style="
+        margin-top:18px;
+        font-size:10px;
+        opacity:.5;
+        letter-spacing:2px;
+        "
+    >
+
+        KNOWLEDGE • CARE • KINDNESS • LEGACY
+
+    </p>
+
+</section>
+
+
+
+<!-- =======================================================
+     PAGE 2 — DEEPANJALI NATH MISS
+======================================================= -->
+
+<section
+    id="page2"
+    class="page"
+>
+
+    <div class="top-card">
+
+        <p class="top-card-small">
+            WELCOME, OUR BELOVED MENTOR
+        </p>
+
+
+        <h2>
+            ✨ Deepanjali Nath Miss ✨
+        </h2>
+
+
+        <p>
+            Zoology Mentor • AHNSSS Badarpur
+        </p>
+
+
+        <p>
+            Our Teacher • Our Guide • Our Hostel Mom ❤️
+        </p>
+
+    </div>
+
+
+
+    <div class="section-title">
+
+        <h2>
+            Why She Is Different? 🌷
+        </h2>
+
+
+        <p>
+            Because some teachers teach a subject,
+            while some leave a permanent mark on the heart.
+        </p>
+
+    </div>
+
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <span class="card-emoji">
+                🧬
+            </span>
+
+            <b>
+                Zoology Maven
+            </b>
+
+            <small>
+                Makes the world of life fascinating.
+            </small>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <span class="card-emoji">
+                🔬
+            </span>
+
+            <b>
+                Our Mentor
+            </b>
+
+            <small>
+                Guides us beyond the classroom.
+            </small>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <span class="card-emoji">
+                🗣️
+            </span>
+
+            <b>
+                No-Shame Zone
+            </b>
+
+            <small>
+                Every genuine question was welcome.
+            </small>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <span class="card-emoji">
+                🤱
+            </span>
+
+            <b>
+                Hostel Mom
+            </b>
+
+            <small>
+                Made being away from home easier.
+            </small>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <span class="card-emoji">
+                🌸
+            </span>
+
+            <b>
+                Care & Kindness
+            </b>
+
+            <small>
+                A heart that always made room for others.
+            </small>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <span class="card-emoji">
+                👑
+            </span>
+
+            <b>
+                Forever Inspiration
+            </b>
+
+            <small>
+                Lessons that stay beyond school.
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <div style="text-align:center;">
+
+        <button
+            type="button"
+            class="btn"
+            onclick="showPage('page3')"
+        >
+
+            📜 READ HER STORY →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PAGE 3 — STORY
+======================================================= -->
+
+<section
+    id="page3"
+    class="page"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Her Story, Our Story ❤️
+        </h2>
+
+
+        <p>
+            A few words from the hearts of her hostel students.
+        </p>
+
+    </div>
+
+
+
+    <div class="story-box">
+
+        <strong>
+            Dear Deepanjali Nath Miss,
+        </strong>
+
+
+        <br><br>
+
+
+        Hostel life taught us many things —
+        independence, responsibility,
+        friendship and growing up.
+
+        <br><br>
+
+        But being away from our families
+        also made us understand the value
+        of having someone who genuinely cares.
+
+        <br><br>
+
+
+        <strong>
+            Zoology was never just a subject when you taught it.
+        </strong>
+
+        <br>
+
+        You transformed chapters into stories,
+        questions into conversations,
+        and difficult concepts into something
+        we could understand.
+
+        <br><br>
+
+
+        You also taught us something much bigger:
+
+        <br><br>
+
+
+        <strong>
+            No question is too small.
+            No doubt should be embarrassing.
+            Learning should never come with fear.
+        </strong>
+
+        <br><br>
+
+
+        Your patience,
+        guidance,
+        kindness and presence
+        became part of our hostel memories.
+
+        <br><br>
+
+
+        For that,
+        we will always be grateful.
+
+        <br><br>
+
+
+        <strong>
+            Thank you for being our teacher,
+            our mentor,
+            and a beautiful motherly presence
+            away from home.
+        </strong>
+
+        <br><br>
+
+
+        With respect and endless gratitude,
+
+        <br><br>
+
+
+        <strong>
+            — Your Hostel Kids ❤️
+        </strong>
+
+    </div>
+
+
+
+    <div style="text-align:center;">
+
+        <button
+            type="button"
+            class="btn"
+            onclick="showPage('page4')"
+        >
+
+            📸 ENTER THE MEMORY GARDEN →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- 
