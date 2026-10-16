@@ -1,0 +1,313 @@
+
+mkdir -p shadowai && cd shadowai && cat > index.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#030914">
+<meta name="description" content="SHADOWAI — cybersecurity, artificial intelligence and ethical security learning portfolio.">
+<title>SHADOWAI | Cybersecurity Portfolio</title>
+<style>
+:root{--bg:#030914;--panel:#061321;--panel2:#081a2b;--text:#e9f2ff;--muted:#a7bad5;--blue:#08b9ff;--cyan:#47e6ff;--border:#17456b;--green:#35efb0;--shadow:0 0 28px #008cff12}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+header{height:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 3.8%;border-bottom:1px solid #17314d;background:#030914f5;position:sticky;top:0;z-index:20;backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo{width:50px;height:56px;filter:drop-shadow(0 0 8px #05baff80)}
+.brand-name{font-size:27px;font-weight:850;line-height:1.05;letter-spacing:-.8px}
+.brand-name span{color:var(--blue)}
+.brand small{font-size:11px;letter-spacing:1.5px;color:#d4e3fa}
+nav{display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.5vw,23px);flex-wrap:wrap}
+nav a{font-size:12px;color:#d6e2f4;white-space:nowrap;padding:8px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.active{color:var(--blue);border-color:var(--blue)}
+.header-actions{display:flex;gap:9px;align-items:center;flex-shrink:0}
+.icon-button,.mode-button{border:1px solid #244668;background:transparent;color:var(--text);border-radius:30px;padding:9px 13px}
+.icon-button{border:0;font-size:20px}
+.menu-button{display:none}
+main{max-width:1600px;margin:auto}
+.hero{min-height:490px;display:grid;grid-template-columns:44% 56%;position:relative;overflow:hidden;border-bottom:1px solid #15334e;background:radial-gradient(ellipse at 75% 48%,#0055a433,transparent 53%),linear-gradient(100deg,#030914 22%,#041122 75%,#030914)}
+.hero-copy{padding:45px 0 40px 4%;align-self:center;z-index:2}
+.pill{display:inline-block;border:1px solid #21659a;border-radius:20px;padding:3px 14px;color:#dceeff;font-size:12px;letter-spacing:.7px;box-shadow:0 0 15px #008cff18}
+h1{font-size:clamp(37px,4vw,57px);line-height:1.06;letter-spacing:-1.5px;margin:20px 0}
+.blue{color:var(--blue)}
+.role-line{font-weight:650;font-size:15px;color:#d6e5f9}
+.hero-copy p,.section-intro{color:var(--muted);font-size:14px;max-width:540px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:19px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 18px;border-radius:11px;border:1px solid #087bbd;background:linear-gradient(110deg,#08b8f5,#0798ec);color:#001020;font-weight:750;font-size:13px;box-shadow:0 0 20px #00aaff1b}
+.btn:hover{filter:brightness(1.14);transform:translateY(-1px)}
+.btn.outline{background:transparent;color:#77d7ff;border-color:#1766a0;box-shadow:none}
+.stats{display:flex;gap:22px;margin-top:27px;flex-wrap:wrap}
+.stat{display:flex;align-items:center;gap:10px;padding-right:20px;border-right:1px solid #1a3550}
+.stat:last-child{border:0}
+.stat-icon{display:grid;place-items:center;width:42px;height:42px;border:1px solid #174e7b;border-radius:50%;color:var(--cyan);font-size:20px}
+.stat strong{font-size:19px;display:block;line-height:1.2}
+.stat small{font-size:11px;color:var(--muted)}
+.hero-art{position:relative;min-height:480px;overflow:hidden;background:linear-gradient(90deg,#03091422,#03091400),url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=85') center/cover}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,#03091412 25%,#00132c33 70%,#03091444),linear-gradient(0deg,#030914 0%,transparent 24%,transparent 80%,#03091422)}
+.art-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,#007dff1b,transparent 62%)}
+.hooded-art{position:absolute;z-index:2;top:18%;left:15%;width:57%;height:65%;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 30px #008dff6b)}
+.hood{width:205px;height:245px;position:relative;background:linear-gradient(120deg,#071b31,#07101e 48%,#143b60);clip-path:polygon(50% 0,78% 14%,97% 48%,83% 70%,76% 100%,24% 100%,17% 70%,3% 48%,22% 14%);border:2px solid #1389d8}
+.hood:before{content:"";position:absolute;inset:25% 16% 22%;background:radial-gradient(ellipse at center,#02050c 0%,#01040b 70%);clip-path:polygon(50% 0,100% 28%,85% 100%,15% 100%,0 28%)}
+.hood:after{content:"";position:absolute;left:43%;top:41%;width:15%;height:17%;background:#00baff;filter:blur(8px);opacity:.45}
+.hood-line{position:absolute;inset:0;border:2px solid #1688d8;clip-path:polygon(50% 0,78% 14%,97% 48%,83% 70%,76% 100%,24% 100%,17% 70%,3% 48%,22% 14%);filter:drop-shadow(0 0 10px #009dff)}
+.think{position:absolute;z-index:3;top:14%;left:3%;font-size:19px;font-weight:750;line-height:1.45;color:#58dfff;text-shadow:0 0 14px #009dff}
+.terminal-card{position:absolute;right:4%;bottom:8%;z-index:4;background:#041323ed;border:1px solid #078ee7;border-radius:11px;padding:14px 17px;box-shadow:0 0 22px #008cff2a;font:12px ui-monospace,monospace;min-width:245px}
+.terminal-card b{color:var(--green);font-weight:600}
+.terminal-row{display:flex;justify-content:space-between;gap:15px}
+.terminal-row span:first-child{color:#d8eaff}
+.section{padding:38px 4%;border-bottom:1px solid #112a40}
+.section-label{font-size:11px;letter-spacing:1.5px;border:1px solid #175584;border-radius:5px;padding:3px 11px;display:inline-block;color:#c6eaff}
+h2{font-size:31px;line-height:1.2;margin:10px 0}
+h2 span{color:var(--blue)}
+h3{margin:0 0 7px;font-size:16px}
+.explore-layout{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(260px,.9fr);gap:32px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-top:18px}
+.card{background:linear-gradient(150deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:var(--shadow);min-width:0}
+.card:hover{border-color:#168fd1;transform:translateY(-2px);transition:.2s}
+.card p{color:var(--muted);font-size:13px;margin:7px 0 14px}
+.card-icon{display:grid;place-items:center;width:53px;height:53px;border:1px solid #146ba1;border-radius:50%;color:var(--cyan);font-size:25px;background:#05203a;margin-bottom:13px}
+.learn-link{font-size:12px;color:#35c9ff;font-weight:650}
+.side-stack{display:flex;flex-direction:column;gap:18px}
+.status-card,.quote-card{border:1px solid var(--border);border-radius:11px;background:var(--panel);padding:16px}
+.status-title{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:750;margin-bottom:8px}
+.online{color:var(--green);font-size:11px;white-space:nowrap}
+.status-row{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #122b42;padding:8px 0;font-size:12px}
+.status-row span:first-child{color:#dceaff}
+.quote-mark{font-size:35px;color:#168bd4;line-height:1}
+.quote-card blockquote{font-size:13px;font-style:italic;margin:0 0 8px 22px}
+.quote-card cite{display:block;text-align:right;font-size:11px;color:var(--muted)}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tag{font-size:11px;color:var(--cyan);border:1px solid #175584;border-radius:5px;padding:3px 8px;display:inline-block;margin:3px 3px 3px 0}
+.progress{height:6px;background:#15283a;border-radius:9px;overflow:hidden;margin:10px 0}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#078fff,#4beaff)}
+.article details{border-top:1px solid #18354e;padding:12px 0}
+.article summary{cursor:pointer;color:#d9f3ff;font-weight:650}
+.article details p{font-size:13px;color:var(--muted)}
+input,textarea,select{width:100%;background:#030d18;color:var(--text);border:1px solid #244866;border-radius:7px;padding:11px;margin:5px 0 14px}
+label{font-size:12px;color:#cde2f9}
+.output{padding:12px;border:1px solid #1a4d6e;border-radius:7px;margin-top:12px;background:#04101b;color:var(--muted);overflow-wrap:anywhere;font-size:13px}
+footer{padding:23px 4%;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+footer strong{color:#cbdcf0;letter-spacing:2px}
+.socials{display:flex;gap:16px}
+.notice{font-size:11px;color:#849cb7}
+#topButton{position:fixed;bottom:20px;right:20px;border:1px solid #17679d;background:#06172a;color:var(--cyan);border-radius:50%;width:42px;height:42px;display:none;z-index:15}
+body.light{--bg:#edf5fc;--panel:#fff;--panel2:#f5faff;--text:#10253b;--muted:#526980;--border:#b5d5ee;--shadow:0 5px 22px #153b5b0c}
+body.light header{background:#edf5f9f5}
+body.light .hero{background:linear-gradient(110deg,#edf5fc,#d9edff)}
+body.light .hero-art:after{background:linear-gradient(90deg,var(--bg),#edf5fc00 45%,#edf5fc22),linear-gradient(0deg,var(--bg),transparent 30%)}
+body.light input,body.light textarea,body.light select{background:#fff;color:#10253b}
+@media(max-width:1100px){header{flex-wrap:wrap}.brand-name{font-size:23px}nav{order:3;width:100%;justify-content:flex-start;gap:17px}.header-actions{margin-left:auto}.hero{grid-template-columns:48% 52%}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){header{padding:10px 4%;min-height:70px}.logo{width:40px;height:45px}.brand-name{font-size:21px}.brand small{font-size:9px}.menu-button{display:inline-block}nav{display:none;order:4;width:100%;padding:8px 0 4px}nav.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}nav a{padding:8px;border-bottom:1px solid #15324a}.header-actions .mode-button{font-size:11px;padding:7px 9px}.hero{grid-template-columns:1fr}.hero-copy{padding:38px 5% 20px}.hero-art{min-height:310px;grid-row:2}.hood{width:150px;height:190px}.think{left:6%;font-size:15px}.terminal-card{right:3%;bottom:5%;min-width:210px;padding:10px;font-size:10px}.stats{gap:12px}.stat{padding-right:10px}.stat-icon{width:35px;height:35px}.stat strong{font-size:16px}.explore-layout,.two-col,.three-col{grid-template-columns:1fr}.section{padding:32px 5%}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:15px}.card-icon{width:45px;height:45px}h2{font-size:27px}footer{padding:22px 5%}}
+@media(max-width:380px){.cards{grid-template-columns:1fr}.terminal-card{min-width:195px}.stats{gap:7px}.stat{gap:6px}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="#home" aria-label="SHADOWAI home">
+<svg class="logo" viewBox="0 0 60 66" fill="none" aria-hidden="true"><path d="M30 3 53 12 50 37 30 60 10 37 7 12Z" stroke="#20caff" stroke-width="3"/><path d="M30 11 46 17 43 35 30 49 17 35 14 17Z" fill="#062747" stroke="#168bd9"/><path d="M19 24 25 19 30 23 35 19 41 24 38 36 30 42 22 36Z" fill="#48e6ff"/><path d="M24 28h3m6 0h3M27 35h6" stroke="#062747" stroke-width="2"/></svg>
+<div><div class="brand-name">SHADOW<span>AI</span></div><small>Cybersecurity Portfolio</small></div>
+</a>
+<nav id="nav">
+<a href="#home" class="active">⌂ &nbsp;Home</a>
+<a href="#about">⊙ &nbsp;About</a>
+<a href="#skills">♧ &nbsp;Skills</a>
+<a href="#ailab">♧ &nbsp;AI Lab</a>
+<a href="#phishing">⛨ &nbsp;Phishing Lab</a>
+<a href="#articles">▤ &nbsp;Articles</a>
+<a href="#certificates">♧ &nbsp;Certificates</a>
+<a href="#contact">✉ &nbsp;Contact</a>
+</nav>
+<div class="header-actions">
+<button class="icon-button" id="themeIcon" aria-label="Toggle light and dark theme" title="Toggle theme">☼</button>
+<button class="mode-button" id="themeButton">☾ &nbsp; Dark Mode</button>
+<button class="icon-button menu-button" id="menuButton" aria-label="Open navigation">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-copy">
+<span class="pill">Welcome to my portfolio</span>
+<h1>Hi, I’m<br><span class="blue">Suhail Tanweer Tapadar</span></h1>
+<div class="role-line">Cybersecurity Enthusiast &nbsp;|&nbsp; AI Researcher &nbsp;|&nbsp; Ethical Hacking <span class="blue">Learner</span></div>
+<p>I’m a Class 12 PCB student with a passion for cybersecurity, artificial intelligence and digital safety. This website is my personal space to share my learning journey, projects, and real certificates.</p>
+<div class="actions"><a class="btn" href="#about">Explore My Journey &nbsp; →</a><a class="btn outline" href="#projects">♧ &nbsp; View Projects</a></div>
+<div class="stats">
+<div class="stat"><span class="stat-icon">♧</span><div><strong>7+</strong><small>Pages / Sections</small></div></div>
+<div class="stat"><span class="stat-icon">⚙</span><div><strong>3+</strong><small>Projects</small></div></div>
+<div class="stat"><span class="stat-icon">◎</span><div><strong>100%</strong><small>Learning Mindset</small></div></div>
+</div>
+</div>
+<div class="hero-art" role="img" aria-label="Technology-themed background image with a custom neon cyber shield illustration">
+<div class="art-overlay"></div>
+<div class="think">Think<br>Analyse<br>Secure</div>
+<div class="hooded-art"><div class="hood"><div class="hood-line"></div></div></div>
+<div class="terminal-card">
+<div class="terminal-row"><span>&gt; Portfolio Demo...</span><b>READY</b></div>
+<div class="terminal-row"><span>&gt; Security Learning...</span><b>ACTIVE</b></div>
+<div class="terminal-row"><span>&gt; Threat Awareness...</span><b>READY</b></div>
+<div class="terminal-row"><span>&gt; Live scan</span><span>NOT RUNNING</span></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="explore-layout">
+<div>
+<span class="section-label">WHAT I DO</span>
+<h2>Explore <span>My World</span></h2>
+<p class="section-intro">From cybersecurity to AI, I'm building skills and projects to create a safer digital future. Here's a quick look at what I focus on:</p>
+<div class="cards">
+<article class="card"><div class="card-icon">⛨</div><h3>Cybersecurity</h3><p>Learn · Practice · Protect</p><a class="learn-link" href="#skills">Learn More &nbsp; →</a></article>
+<article class="card"><div class="card-icon">♧</div><h3>AI Research</h3><p>Explore · Build · Innovate</p><a class="learn-link" href="#ailab">Learn More &nbsp; →</a></article>
+<article class="card"><div class="card-icon">‹/›</div><h3>Web Development</h3><p>HTML · CSS · JavaScript</p><a class="learn-link" href="#projects">Learn More &nbsp; →</a></article>
+<article class="card"><div class="card-icon">♙</div><h3>Education</h3><p>Class 12 PCB Student</p><a class="learn-link" href="#certificates">Learn More &nbsp; →</a></article>
+</div>
+</div>
+<aside class="side-stack">
+<div class="status-card">
+<div class="status-title"><span>🟢 System Status</span><span class="online">● Portfolio Demo</span></div>
+<div class="status-row"><span>▣ &nbsp; Website interface</span><span class="online">● Loaded</span></div>
+<div class="status-row"><span>◉ &nbsp; Navigation</span><span class="online">● Enabled</span></div>
+<div class="status-row"><span>⛨ &nbsp; Security lab</span><span class="online">● Demo</span></div>
+<div class="status-row"><span>♧ &nbsp; AI module</span><span class="online">● Local demo</span></div>
+<p class="notice">These statuses describe this website only, not your device or an external network.</p>
+</div>
+<div class="quote-card"><div class="quote-mark">“</div><blockquote>“The best defense is awareness, not just technology.”</blockquote><cite>— Suhail Tanweer Tapadar</cite></div>
+</aside>
+</div>
+</section>
+
+<section class="section" id="skills">
+<span class="section-label">01 / CAPABILITIES</span><h2>Skills &amp; <span>Learning Roadmap</span></h2>
+<p class="section-intro">An honest snapshot of topics I'm studying. Progress is illustrative, not a professional skill certification.</p>
+<div class="three-col">
+<article class="card"><h3>🌐 Networking Basics</h3><p>IP addresses, DNS, HTTP, ports and how networks communicate.</p><div class="progress"><span style="width:35%"></span></div><span class="tag">Currently learning</span></article>
+<article class="card"><h3>🛡️ Defensive Security</h3><p>Account protection, security hygiene, threat modelling and safe testing.</p><div class="progress"><span style="width:40%"></span></div><span class="tag">Currently learning</span></article>
+<article class="card"><h3>🤖 AI Fundamentals</h3><p>AI concepts, limitations, responsible use and basic prompt design.</p><div class="progress"><span style="width:30%"></span></div><span class="tag">Currently learning</span></article>
+<article class="card"><h3>💻 Web Development</h3><p>Building responsive websites using HTML, CSS and JavaScript.</p><div class="progress"><span style="width:45%"></span></div><span class="tag">Practice projects</span></article>
+<article class="card"><h3>🔐 Privacy</h3><p>Understanding permissions, strong authentication and personal data safety.</p><div class="progress"><span style="width:40%"></span></div><span class="tag">Currently learning</span></article>
+<article class="card"><h3>📚 Research</h3><p>Reading documentation and recording what I learn in small projects.</p><div class="progress"><span style="width:50%"></span></div><span class="tag">Ongoing</span></article>
+</div>
+</section>
+
+<section class="section" id="ailab">
+<span class="section-label">02 / INTERACTIVE DEMO</span><h2>AI <span>Awareness Lab</span></h2>
+<p class="section-intro">Try a local text-checking demonstration. It uses simple keyword rules, not a trained AI model or a live security scanner.</p>
+<div class="two-col">
+<div class="card"><h3>Message Risk Checklist</h3><label for="aiText">Paste a message to check</label><textarea id="aiText" rows="5" placeholder="Example: Your account will close today. Click this unknown link to verify your password."></textarea><button class="btn" id="analyzeButton">Analyse Text →</button><button class="btn outline" id="clearAi">Clear</button><div id="aiOutput" class="output" aria-live="polite">Your demo results will appear here.</div></div>
+<div class="card"><h3>How this demo works</h3><p>It looks for common phrases associated with suspicious messages, such as urgent demands or requests for credentials.</p><div class="status-row"><span>External network access</span><span class="online">Not used</span></div><div class="status-row"><span>Device scanning</span><span class="online">Not performed</span></div><div class="status-row"><span>Personal data uploaded</span><span class="online">No</span></div><p class="notice">A result cannot prove a message is safe or malicious. Verify through the official service.</p></div>
+</div>
+</section>
+
+<section class="section" id="phishing">
+<span class="section-label">03 / PHISHING LAB</span><h2>Phishing <span>Awareness Challenge</span></h2>
+<p class="section-intro">Practice recognising suspicious messages in a safe educational quiz.</p>
+<div class="two-col">
+<div class="card"><h3>Scenario 01</h3><p>A message says your account will be permanently closed in ten minutes unless you follow an unfamiliar link and enter your password.</p><p><strong>What is the safest response?</strong></p><button class="btn outline quiz-answer" data-correct="false">Click the link immediately</button><button class="btn quiz-answer" data-correct="true">Open the official app independently</button><button class="btn outline quiz-answer" data-correct="false">Share the message with friends and ask them to click</button><div id="quizOutput" class="output" aria-live="polite">Choose an answer to see feedback.</div></div>
+<div class="card"><h3>Quick Safety Checklist</h3><p>✓ Verify the sender using a separate trusted channel.</p><p>✓ Check the domain before signing in.</p><p>✓ Never share passwords or one-time codes.</p><p>✓ Enable multifactor authentication.</p><p>✓ Report suspicious messages through official channels.</p></div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<span class="section-label">04 / MY WORK</span><h2>Featured <span>Projects</span></h2>
+<div class="three-col">
+<article class="card"><div class="card-icon">⌘</div><h3>SHADOWAI Portfolio</h3><p>A responsive single-file website featuring navigation, interactive demonstrations and accessible controls.</p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></article>
+<article class="card"><div class="card-icon">⛨</div><h3>Phishing Awareness Quiz</h3><p>A beginner-friendly quiz explaining how to recognise suspicious messages and protect accounts.</p><span class="tag">Education</span><span class="tag">Digital Safety</span></article>
+<article class="card"><div class="card-icon">♧</div><h3>Text Risk Checklist</h3><p>A local keyword-based educational tool for reviewing common warning signs in text messages.</p><span class="tag">Local Demo</span><span class="tag">Awareness</span></article>
+</div>
+</section>
+
+<section class="section" id="articles">
+<span class="section-label">05 / KNOWLEDGE BASE</span><h2>Cybersecurity <span>Articles</span></h2>
+<div class="card article">
+<details open><summary>01 — What is ethical cybersecurity?</summary><p>Ethical security work focuses on identifying and reducing risks with explicit permission, a defined scope and responsible reporting. Never test other people's accounts or systems without authorisation.</p></details>
+<details><summary>02 — How to protect your Instagram account</summary><p>Use a unique password, turn on two-factor authentication, protect your recovery email, review login activity and avoid third-party apps that ask for your credentials.</p></details>
+<details><summary>03 — How to recognise phishing</summary><p>Be cautious with urgent threats, unexpected attachments, unfamiliar login links and requests for passwords or one-time codes. Visit the service directly instead of using a message link.</p></details>
+<details><summary>04 — AI and responsible security</summary><p>AI can help explain concepts and organise information, but it can also make mistakes. Check important claims against trustworthy documentation and avoid submitting private data to tools without understanding their policies.</p></details>
+<details><summary>05 — Beginner's web security checklist</summary><p>Keep software updated, use HTTPS, validate input, protect secrets, apply least privilege and test only environments you own or are authorised to assess.</p></details>
+</div>
+</section>
+
+<section class="section" id="certificates">
+<span class="section-label">06 / ACHIEVEMENTS</span><h2>Certificates &amp; <span>Learning Records</span></h2>
+<p class="section-intro">Upload a certificate image you actually own to preview it on this page. The preview is temporary and is not uploaded to GitHub automatically.</p>
+<div class="two-col">
+<div class="card"><h3>Certificate Image Preview</h3><label for="certUpload">Select your certificate image</label><input type="file" id="certUpload" accept="image/*"><div id="certPreview" class="output">Your selected certificate will appear here.</div><p class="notice">Only display authentic certificates. Never claim a demo graphic is an earned qualification.</p></div>
+<div class="card"><h3>Learning Record</h3><p><strong>Current focus:</strong> Class 12 studies, foundational networking, web development and digital safety.</p><p><strong>Project evidence:</strong> This portfolio and its working front-end demonstrations.</p><p><strong>Next steps:</strong> Complete beginner courses, build projects and document verified achievements.</p></div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<span class="section-label">07 / CONTACT</span><h2>Let's <span>Connect</span></h2>
+<p class="section-intro">Use this demo form to test the interface. It does not send email or store submissions.</p>
+<div class="two-col">
+<div class="card"><form id="contactForm"><label for="contactName">Your name</label><input id="contactName" name="name" required maxlength="80" placeholder="Enter your name"><label for="contactEmail">Email address</label><input id="contactEmail" name="email" type="email" required maxlength="150" placeholder="you@example.com"><label for="contactMessage">Message</label><textarea id="contactMessage" name="message" rows="4" required maxlength="1500" placeholder="Write your message"></textarea><button class="btn" type="submit">Test Contact Form →</button></form><div id="contactOutput" class="output" aria-live="polite">Demo form ready.</div></div>
+<div class="card"><h3>About this website</h3><p>SHADOWAI is an independent educational portfolio for learning and demonstrating front-end web development.</p><p>It is not an official government, law-enforcement or security-agency website. No unauthorised access is performed.</p><h3 style="margin-top:20px">Website navigation</h3><p><a class="learn-link" href="#home">↑ Back to home</a></p><p><a class="learn-link" href="#projects">View projects →</a></p></div>
+</div>
+</section>
+</main>
+
+<footer><div><strong>SHADOWAI</strong> &nbsp; | &nbsp; Cybersecurity Portfolio<br><span>Designed for a safer digital world · Educational demo</span></div><div class="socials"><a href="#projects" aria-label="Projects">Projects</a><a href="#articles" aria-label="Articles">Articles</a><a href="#contact" aria-label="Contact">Contact</a></div><div>© <span id="year"></span> SHADOWAI</div></footer>
+<button id="topButton" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const nav=$('#nav'),menuButton=$('#menuButton');
+menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.textContent=open?'✕':'☰';menuButton.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.textContent='☰';menuButton.setAttribute('aria-expanded','false');}));
+const themeButton=$('#themeButton'),themeIcon=$('#themeIcon');
+function setTheme(light){document.body.classList.toggle('light',light);themeButton.textContent=light?'☀ Light Mode':'☾ Dark Mode';themeIcon.textContent=light?'☾':'☼';}
+themeButton.addEventListener('click',()=>setTheme(!document.body.classList.contains('light')));
+themeIcon.addEventListener('click',()=>setTheme(!document.body.classList.contains('light')));
+$('#year').textContent=new Date().getFullYear();
+const sections=[...document.querySelectorAll('main section[id]')];
+if('IntersectionObserver' in window){
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}});},{rootMargin:'-25% 0px -60% 0px'});
+sections.forEach(s=>observer.observe(s));
+}
+const topButton=$('#topButton');
+window.addEventListener('scroll',()=>{topButton.style.display=window.scrollY>350?'block':'none';},{passive:true});
+topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+$('#analyzeButton').addEventListener('click',()=>{
+const value=$('#aiText').value.trim(),out=$('#aiOutput');
+if(!value){out.textContent='Enter some sample text first.';return;}
+const rules=[['urgent','Urgent pressure'],['immediately','Urgency'],['password','Password request'],['verify your account','Account verification request'],['account will close','Account closure threat'],['click this link','Link pressure'],['one-time code','One-time code request'],['bank details','Financial information request'],['prize','Unexpected prize claim'],['gift card','Gift card request']];
+const found=rules.filter(([word])=>value.toLowerCase().includes(word));
+out.replaceChildren();
+const title=document.createElement('strong');title.textContent=found.length?'Potential warning signs':'No listed phrases found';out.appendChild(title);
+const p=document.createElement('p');p.textContent=found.length?found.map(x=>x[1]).join(', '):'This basic check did not find its listed phrases. That does not prove the text is safe.';out.appendChild(p);
+const note=document.createElement('p');note.textContent='Local keyword demonstration only. Verify messages independently; no network scan was performed.';out.appendChild(note);
+});
+$('#clearAi').addEventListener('click',()=>{$('#aiText').value='';$('#aiOutput').textContent='Your demo results will appear here.';});
+document.querySelectorAll('.quiz-answer').forEach(button=>button.addEventListener('click',()=>{
+const out=$('#quizOutput');
+out.textContent=button.dataset.correct==='true'?'Correct! Open the official app or type its known address yourself. Do not follow suspicious sign-in links.':'That choice is risky. Avoid unfamiliar links and never enter credentials on suspicious pages.';
+out.style.borderColor=button.dataset.correct==='true'?'#35efb0':'#e7a64b';
+}));
+$('#certUpload').addEventListener('change',event=>{
+const file=event.target.files&&event.target.files[0],out=$('#certPreview');
+out.replaceChildren();
+if(!file){out.textContent='Your selected certificate will appear here.';return;}
+if(!file.type.startsWith('image/')){out.textContent='Please select an image file.';return;}
+if(file.size>5*1024*1024){out.textContent='Please select an image smaller than 5 MB.';return;}
+const img=document.createElement('img');img.alt='Selected certificate preview';img.style.cssText='display:block;max-width:100%;max-height:500px;margin:auto;border-radius:6px';img.src=URL.createObjectURL(file);out.appendChild(img);
+const caption=document.createElement('p');caption.textContent='Preview only. This file has not been uploaded to the website.';out.appendChild(caption);
+});
+$('#contactForm').addEventListener('submit',event=>{
+event.preventDefault();
+$('#contactOutput').textContent='Form test successful. No message was sent or saved. Connect a trusted form service if you want real email delivery.';
+});
+})();
+</script>
+</body>
+</html>
+EOF
